@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes stampIn {
+  0% {
+    opacity: 0;
+    transform: scale(2.2) rotate(-12deg);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(0.9) rotate(-12deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(-12deg);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bumpCart {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.18);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.stamp-in {
+  animation: stampIn 0.5s cubic-bezier(0.2, 1.4, 0.4, 1) both;
+}
+
+.sheet-up {
+  animation: slideUp 0.28s ease-out both;
+}
+
+.fade-in {
+  animation: fadeIn 0.2s ease-out both;
+}
+
+.cart-bump {
+  animation: bumpCart 0.26s ease-out;
+}
+
+/* Efeito de borda serrilhada no topo da comanda, imitando papel picotado */
+.ticket-edge {
+  background-image: linear-gradient(135deg, #f5f5f4 25%, transparent 25%),
+    linear-gradient(-135deg, #f5f5f4 25%, transparent 25%);
+  background-size: 16px 16px;
+  background-position: 0 0;
+  height: 10px;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
