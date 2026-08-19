@@ -8,7 +8,7 @@ export default function CategoryTabs({ categories, activeCat, setActiveCat }) {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex gap-2 overflow-x-auto no-scrollbar">
         {categories.map((c) => {
           const active = activeCat === c.id;
-          const colors = COLOR_MAP[c.color];
+          const colors = COLOR_MAP[c.color] || COLOR_MAP.red;
           return (
             <button
               key={c.id}
